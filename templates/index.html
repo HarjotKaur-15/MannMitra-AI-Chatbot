@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MannMitra Chatbot</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatBot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
-    <h1>Welcome to MannMitra 💙</h1>
-    <p>Your AI Mental Health Support Chatbot</p>
+
+  <div class="chat-wrapper">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="bot-avatar">🤖</div>
+      <div class="bot-info">
+        <h2>ChatBot</h2>
+        <span class="status">● Online</span>
+      </div>
+    </div>
+
+    <!-- Messages Area -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot-message">
+        <span class="bubble">👋 Hi! I'm ChatBot. Ask me anything — try <b>jokes</b>, <b>time</b>, or just say <b>hello</b>!</span>
+        <span class="timestamp" id="initTime"></span>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-input-area">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Type your message..."
+        autocomplete="off"
+      />
+      <button id="sendBtn" onclick="sendMessage()">Send ➤</button>
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
